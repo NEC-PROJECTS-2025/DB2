@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block title %}About Project{% endblock %}
+{% block content %}
+<h1>About Project</h1>
+<p>This project uses Support vector machine to identify Airline Delays Predicgtion</p>
+<p>Flight delays are one of the major problems faced
+    by airlines, as it affects customers’ experiences and operational
+    efficiency. Several machine learning algorithms were applied to
+    a large-scale dataset that included more than 336,000 records to
+    predict flight delays. Accordingly, four models have been used-
+    Random Forest, Support Vector Machine, Linear Regression, and
+    Decision Tree-on this dataset after handling preprocessing such
+    as missing value handling, imputation of data, and normalization
+    of features. Some of these features include scheduled departure
+    and arrival times, flight distance, and carriers detail. In contrast,
+    among the different models tried, SVM alone was successful
+    enough to yield an accuracy of up to 97%. The fact is that
+    most times, delay data is complex and normally high in its
+    dimensionality. Therefore, it suited best for SVM to handle the
+    delays’ classification in various features easily and expeditiously.
+    On the other hand, Random Forest and Decision Tree were
+    reasonably correct, yet its result was well below that of SVM.
+    Linear Regression had no success in handling the non-linear
+    relationship present in the sample data. The high accuracy of
+    the SVM model lends credibility to its application in real-time
+    delay prediction systems, which would further assist airlines
+    in informed decision making and operational planning. Future
+    research could aim at an expanded set of features with real-time
+    weather data, as well as investigate ways to optimize the model’s
+    performance by employing more recent advanced algorithms,
+    such as ensemble methods or deep learning techniques.</p>
+    <div class="technologies-section">
+        <h2 class="animated-title">Technologies Used</h2>
+        <ul class="animated-text">
+            <li>Machine Learning Models : Linear Regression, SVR, XGBoost, LightGBM</li>
+            <li>Framework : Flask</li>
+            <li>Programming Languages : Python</li>
+            <li>Datasets : BTS dataset</li>
+        </ul>
+    </div>
+
+{% endblock %}

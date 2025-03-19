@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block title %}Predictions{% endblock %}
+
+{% block content %}
+<h1>Flight Prediction</h1>
+
+<form method="POST" action="/prediction">
+    <table style="border-spacing: 10px;">
+        <tr>
+            <td><label for="source">Source:</label></td>
+            <td><input type="text" id="source" name="source" placeholder="Enter source" required></td>
+        </tr>
+        <tr>
+            <td><label for="destination">Destination:</label></td>
+            <td><input type="text" id="destination" name="destination" placeholder="Enter destination" required></td>
+        </tr>
+        <tr>
+            <td><label for="airline_name">Airline Name:</label></td>  <!-- Updated field name -->
+            <td><input type="text" id="airline_name" name="airline_name" placeholder="Enter airline name" required></td>
+        </tr>
+        <tr>
+            <td><label for="weather">Weather:</label></td>
+            <td><input type="text" id="weather" name="weather" placeholder="Describe the weather" required></td>
+        </tr>
+        <tr>
+            <td><label for="air_traffic">Air Traffic:</label></td>
+            <td>
+                <table style="border-spacing: 5px;">
+                    <tr>
+                        <td><label for="num_flights">Number of Flights:</label></td>
+                        <td><input type="number" id="num_flights" name="num_flights" placeholder="Enter number of flights" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="peak_hours">Peak Hours:</label></td>
+                        <td>
+                            <select id="peak_hours" name="peak_hours" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="traffic_density">Traffic Density:</label></td>
+                        <td>
+                            <select id="traffic_density" name="traffic_density" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="Low">Low</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="High">High</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <button type="submit" style="margin-top: 10px;">Submit</button>
+</form>
+
+<!-- Display the result below the form -->
+{% if result %}
+    <hr>
+    <h2>Prediction Result</h2>
+    <p><strong>Result:</strong> {{ result }}</p>
+    {% if image_path %}
+        <img src="{{ image_path }}" alt="Result Image" style="max-width: 300px;">
+    {% endif %}
+{% endif %}
+{% endblock %}

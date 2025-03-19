@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flask App{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="/static/images/Nec.jpeg" alt="NEC Logo" class="logo">
+            <nav class="horizontal-nav">
+                <a href="/">Home</a>
+                <a href="/about">About Project</a>
+                <a href="/prediction">Predictions</a>
+                <a href="/model-eval">Model Evaluation</a>
+                <a href="/flowchart">Project Flow Chart</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 NEC Engineering College</p>
+    </footer>
+    
+</body>
+</html>
